@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 
 class MachineTest {
 
@@ -11,7 +11,7 @@ class MachineTest {
         int price = 100;
         int[] result = Machine.change(money, price);
         int[] expected = {};
-        Assertions.assertArrayEquals(expected, result);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -20,7 +20,7 @@ class MachineTest {
         int price = 35;
         int[] result = Machine.change(money, price);
         int[] expected = {10, 5};
-        Assertions.assertArrayEquals(expected, result);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -29,7 +29,7 @@ class MachineTest {
         int price = 21;
         int[] result = Machine.change(money, price);
         int[] expected = {10, 10, 5, 2, 2};
-        Assertions.assertArrayEquals(expected, result);
+        assertThat(result).isEqualTo(expected);
     }
 
     @Test
@@ -38,6 +38,6 @@ class MachineTest {
         int price = 32;
         int[] result = Machine.change(money, price);
         int[] expected = {10, 5, 2, 1};
-        Assertions.assertArrayEquals(expected, result);
+        assertThat(result).isEqualTo(expected);
     }
 }
